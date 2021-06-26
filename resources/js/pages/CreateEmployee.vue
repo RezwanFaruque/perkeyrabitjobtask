@@ -3,7 +3,7 @@
     <div class="page-title text-center">Create Employee</div>
     <div class="form-section">
       <ValidationObserver v-slot="{ invalid }">
-        <form @submit.prevent="loginUser">
+        <form @submit.prevent="createEmployee">
           <div class="section">
             <ValidationProvider rules="required" v-slot="{ errors }">
               <input
@@ -33,7 +33,6 @@
                 type="text"
                 placeholder="Designation"
                 v-model="formData.designation"
-                
               />
               <span id="error">{{ errors[0] }}</span>
             </ValidationProvider>
@@ -55,7 +54,6 @@ import {
   ValidationObserver,
 } from "vee-validate/dist/vee-validate.full.esm";
 
-
 export default {
   name: "CreateEmployee",
 
@@ -73,7 +71,32 @@ export default {
     };
   },
 
-
+  methods: {
+    async createEmployee() {
+      return new Promise((resolve, reject) => {
+        axios
+          .post("http://127.0.0.1:8000/api/employees", this.formData, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("Token"), //the token is a variable which holds the token
+            },
+          })
+          .then(({ data }) => {
+            resolve(data);
+            console.log(data);
+            if (data.status.toLowerCase() == "success") {
+              alert(data.message);
+              this.$router.push("/employee-list");
+            } else if (data.status.toLowerCase() == "error") {
+              alert(data.message);
+            }
+          })
+          .catch((e) => {
+            alert("Your Given Data is invalid");
+            reject(e);
+          });
+      });
+    },
+  },
 };
 </script>
 
