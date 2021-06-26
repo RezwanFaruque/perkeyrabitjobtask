@@ -1,0 +1,37 @@
+#navbar{
+    .navbar{
+        background: linear-gradient(90deg,#06d77b,#009f53);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        .container-fluid{
+            .navbar-brand{
+                color: white;
+            }
+            button{
+
+            }
+
+            .collapse{
+                ul{
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                    padding-right: 20px;
+                    li{
+                        margin-left: 7px;
+                        margin-right: 7px;
+                        border: 1px solid white;
+                        a{
+                            font-size: 15px;
+                            font-family: sans-serif;
+                            color: white;
+                            text-decoration: none;
+                            padding-left: 5px;
+                            padding-right: 5px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

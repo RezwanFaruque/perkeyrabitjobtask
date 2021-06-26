@@ -1,0 +1,80 @@
+#khoj_page {
+    margin-top: 50px;
+
+    .page-title {
+        font-size: 22px;
+        font-family: sans-serif;
+        color: #2c3e50;
+    }
+
+    .form-section {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        width: 50%;
+        margin: auto;
+        margin-top: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        span {
+            form {
+                .section {
+                    margin-bottom: 30px;
+                    span {
+                        input {
+                            height: 40px;
+                            width: 100%;
+                            border: none;
+                            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                                rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+                        }
+
+                        input::placeholder {
+                            /* Chrome, Firefox, Opera, Safari 10.1+ */
+                            font-size: 18px;
+                            font-family: sans-serif;
+                            color: black;
+                            margin-left: 20px;
+                        }
+
+                        input:-ms-input-placeholder {
+                            /* Internet Explorer 10-11 */
+                            font-size: 18px;
+                            font-family: sans-serif;
+                            color: black;
+                            margin-left: 20px;
+                        }
+
+                        input::-ms-input-placeholder {
+                            /* Microsoft Edge */
+                            font-size: 18px;
+                            font-family: sans-serif;
+                            color: black;
+                            margin-left: 20px;
+                        }
+                    }
+                }
+
+                .login-submit {
+                    button {
+                        border: none;
+                        border-radius: 5px;
+                        display: inline-block;
+                        padding: 8px 16px;
+                        vertical-align: middle;
+                        overflow: hidden;
+                        text-decoration: none;
+                        color: inherit;
+                        text-align: center;
+                        white-space: nowrap;
+                        background-color: #04aa6d;
+                        color: #ffffff;
+                        font-size: 15px;
+                        font-family: sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}
