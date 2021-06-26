@@ -338,6 +338,16 @@ export default {
         (x) => x.id === id
       );
 
+      const enableindex = this.searchemployees.findIndex((x)=> x.id == id);
+
+      // this.formData.selectedemployees[index]
+      let newemployess = [...this.searchemployees];
+      newemployess[index] = {
+        ...newemployess[index],
+        diseable: !newemployess[index].diseable,
+      };
+      this.searchemployees = newemployess;
+
       this.formData.selectedemployees.splice(index, 1);
     },
 

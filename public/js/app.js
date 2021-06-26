@@ -3130,6 +3130,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var index = this.formData.selectedemployees.findIndex(function (x) {
         return x.id === id;
       });
+      var enableindex = this.searchemployees.findIndex(function (x) {
+        return x.id == id;
+      }); // this.formData.selectedemployees[index]
+
+      var newemployess = _toConsumableArray(this.searchemployees);
+
+      newemployess[index] = _objectSpread(_objectSpread({}, newemployess[index]), {}, {
+        diseable: !newemployess[index].diseable
+      });
+      this.searchemployees = newemployess;
       this.formData.selectedemployees.splice(index, 1);
     },
     saveSelectedEmployee: function saveSelectedEmployee() {
